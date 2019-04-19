@@ -26,6 +26,17 @@ int constValue2ConstPoint() {
     // cout << "age1: " << age1 << endl;
 }
 
+int doubleConstPoint() {
+    const int **pp2;
+
+    int age = 26;
+    int *p1 = &age;
+
+    // pp2 = &p1; NOTICE: invalid
+
+    cout << "**pp2: " << **pp2 << endl;
+}
+
 int main(int argc, char const *argv[])
 {
     /* code */
