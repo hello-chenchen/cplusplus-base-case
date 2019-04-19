@@ -49,6 +49,15 @@ int constTransfer() {
 
     int sage = 80;
     pt = &sage;
+    // *pt = sage; NOTICE: invalid
+
+    cout << "pt: " << pt << endl;
+    cout << "*pt: " << *pt << endl;
+
+    int* const pt1 = &age;
+
+    // pt1 = &sage; NOTICE: invalid
+    *pt1 = sage;
 
     cout << "pt: " << pt << endl;
     cout << "*pt: " << *pt << endl;
