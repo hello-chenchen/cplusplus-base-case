@@ -40,8 +40,23 @@ int doubleConstPoint() {
     cout << "**pp2: " << **pp2 << endl;
 }
 
+int constTransfer() {
+    int age = 39;
+    const int *pt = &age;
+
+    cout << "pt: " << pt << endl;
+    cout << "*pt: " << *pt << endl;
+
+    int sage = 80;
+    pt = &sage;
+
+    cout << "pt: " << pt << endl;
+    cout << "*pt: " << *pt << endl;
+}
+
 int main(int argc, char const *argv[])
 {
     /* code */
+    constTransfer();
     return 0;
 }
