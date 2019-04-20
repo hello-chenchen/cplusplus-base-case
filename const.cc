@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int constValue() {
+void constValue() {
     int age = 26;
     const int *pt = &age;
 
@@ -14,7 +14,7 @@ int constValue() {
     cout << "*pt1: " << *pt << endl;
 }
 
-int constValue2ConstPoint() {
+void constValue2ConstPoint() {
     const int age = 26;
     const int *pt = &age;
 
@@ -22,11 +22,22 @@ int constValue2ConstPoint() {
 
     //NOTICE: invalid
     // int *age1 = pt;
+    int *age1 = (int *)pt;
     // int *age1 = &age;
-    // cout << "age1: " << age1 << endl;
+    cout << "age1: " << *age1 << endl;
 }
 
-int doubleConstPoint() {
+void const2CommonValude() {
+    const int age = 26;
+    int ik = age;
+
+    cout << "age: " << age << endl;
+    cout << "ik: " << ik << endl;
+    ik = 2;
+    cout << "ik: " << ik << endl;
+}
+
+void doubleConstPoint() {
     const int **pp2;
 
     int *p1;
@@ -40,7 +51,7 @@ int doubleConstPoint() {
     cout << "**pp2: " << **pp2 << endl;
 }
 
-int constTransfer() {
+void constTransfer() {
     int age = 39;
     const int *pt = &age;
 
@@ -66,6 +77,6 @@ int constTransfer() {
 int main(int argc, char const *argv[])
 {
     /* code */
-    constTransfer();
+    const2CommonValude();
     return 0;
 }
